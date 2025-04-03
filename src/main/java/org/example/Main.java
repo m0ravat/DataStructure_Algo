@@ -14,4 +14,15 @@ public class Main {
             System.out.println("i = " + i);
         }
     }
+
+    public static String time() {
+        long start = System.nanoTime();
+
+        // -------- program --------
+
+        // -------------------------------
+
+        long duration = (System.nanoTime() - start) / 1000000;
+        return duration + "ms";
+    }
 }
