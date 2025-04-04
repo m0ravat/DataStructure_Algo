@@ -1,17 +1,28 @@
 package org.dataStructure;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class arrayList {
     ArrayList<Integer> num = new ArrayList<Integer>();
+    ArrayList<String> alphabet = new ArrayList<>();
 
     public arrayList(){
-        long start = System.nanoTime();
+        long start, duration;
+        start = System.nanoTime();
         for (int i = 0; i< 1000; i++){
             num.add((int)( Math.random() * 10));
         }
-        long duration = (System.nanoTime() - start) / 1000000;
+        duration = (System.nanoTime() - start) / 1000000;
         System.out.println(duration + "ms for generating 1000 arraylist values");
+
+
+        start = System.nanoTime();
+        for (char letter = 'A'; letter <= 'L'; letter++) {
+            alphabet.add(String.valueOf(letter));
+        }
+        duration = (System.nanoTime() - start) / 1_000_000;
+        System.out.println(duration + "ms for generating letters A-L");
     }
     public void functionality(){
         num.remove(370);
